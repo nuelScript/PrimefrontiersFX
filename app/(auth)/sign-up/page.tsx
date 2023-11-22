@@ -33,18 +33,23 @@ const SignUpPage = () => {
       email: "",
       currency: "USD",
       password: "",
-      confirm_password: "",
+      confirmPassword: "",
       t_and_c: true,
     },
   });
 
   const isLoading = form.formState.isSubmitting;
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {};
   return (
     <div className="flex flex-col justify-center items-center pt-10 bg-black min-h-screen px-4 md:px-0">
       <Card className="p-0 md:p-6 w-full md:w-[500px] h-full bg-[#0b1118] rounded-lg">
         <CardContent className="">
           <Form {...form}>
-            <form className="flex flex-col space-y-6 pt-16">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="flex flex-col space-y-6 pt-16"
+            >
               <div className="flex flex-col space-y-6">
                 <FormField
                   control={form.control}
@@ -116,7 +121,7 @@ const SignUpPage = () => {
                 />
                 <FormField
                   control={form.control}
-                  name="confirm_password"
+                  name="confirmPassword"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
@@ -144,7 +149,7 @@ const SignUpPage = () => {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-transparent">
                             <SelectValue placeholder="Choose a currency" />
                           </SelectTrigger>
                         </FormControl>
