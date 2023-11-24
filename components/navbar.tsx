@@ -2,7 +2,7 @@ import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const routes = [
   {
@@ -35,6 +35,7 @@ const Navbar = () => {
               <span className="inline-flex h-[2px] w-full -translate-x-1 transform bg-primary transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:bg-sky-700 dark:group-hover:bg-sky-300 group-active:bg-sky-300"></span>
             </div>
           </SheetTrigger>
+          <SheetContent></SheetContent>
         </Sheet>
         <Link href="/">
           <p className="text-base font-semibold">PrimefrontiersFX</p>
@@ -43,7 +44,9 @@ const Navbar = () => {
       <div className="flex items-center space-x-8">
         {routes.map((route) => (
           <Link key={route.href} href={route.href}>
-            <div className={cn("hover:text-sky-300 font-semibold")}>
+            <div
+              className={cn("hover:text-sky-300 font-semibold lg:block hidden")}
+            >
               {route.label}
             </div>
           </Link>

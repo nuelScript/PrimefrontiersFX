@@ -38,11 +38,14 @@ const ContactPage = () => {
     console.log(data);
   };
 
-  const isLoading = form.formState.isLoading;
+  const isLoading = form.formState.isSubmitting;
   return (
     <div className="flex flex-col">
-      <Banner title="Contact Us" />
-      <div className="p-20">
+      <Banner
+        className="bg-[url(/images/julian-hochgesang-psGV5KhidlY-unsplash.jpg)]"
+        title="Contact Us"
+      />
+      <div className="p-8 lg:p-20">
         <div className="flex flex-col lg:flex-row lg:space-x-12 lg:space-y-0 space-y-12 space-x-0 items-center">
           <Form {...form}>
             <form
@@ -108,7 +111,7 @@ const ContactPage = () => {
             </form>
           </Form>
           <div className="flex flex-col space-y-8 items-center w-full">
-            <p className="text-center font-medium text-base lg:w-3/6 w-2/3">
+            <p className="text-center font-medium text-base lg:w-3/6 w-3/4">
               We are always open and we welcome and questions you have for our
               team. If you wish to get in touch, please fill out the form below.
               Someone from our team will get back to you shortly.
