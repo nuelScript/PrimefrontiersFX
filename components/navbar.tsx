@@ -25,7 +25,7 @@ const nunito = Nunito({
 
 const Navbar = () => {
   return (
-    <div className="sticky top-0 w-full flex justify-between py-4 px-8 bg-transparent/20 z-10">
+    <div className="sticky top-0 w-full flex justify-between py-4 px-8 bg-black z-10">
       <div className="flex flex-1 items-center space-x-8">
         <Sheet>
           <SheetTrigger asChild>
