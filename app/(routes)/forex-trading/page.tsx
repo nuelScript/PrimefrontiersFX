@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const ForexTradingPage = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center space-y-20">
       <Banner
         title="Forex Trading"
         className="bg-[url(/images/jason-leung-SAYzxuS1O3M-unsplash.jpg)]"
@@ -12,9 +12,9 @@ const ForexTradingPage = () => {
       />
       <div className="flex flex-col space-y-5 py-6 px-6 sm:px-10 md:px-14 lg:px-20 mx-auto">
         <Card className="w-full border-none bg-[#0b1118] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
-          <CardContent className="flex flex-col text-start space-y-12 py-8 px-6 sm:px-10 md:px-14 lg:px-20 font-semibold leading-relaxed">
+          <CardContent className="flex flex-col text-start space-y-12 py-8 px-6 sm:px-10 md:px-14 lg:px-20 font-normal leading-relaxed">
             <section className="space-y-4">
-              <p>What is Forex?</p>
+              <p className="font-bold">What is Forex?</p>
               <p>
                 Forex is short for foreign exchange. The forex market is a place
                 where currencies are traded. It is the largest and most liquid
@@ -26,7 +26,7 @@ const ForexTradingPage = () => {
               </p>
             </section>
             <section className="space-y-4">
-              <p>What is Margin?</p>
+              <p className="font-bold">What is Margin?</p>
               <p>
                 Margin is the amount of a trader&apos;s funds required to open a
                 new position. Margin is estimated based on the size of your
@@ -40,7 +40,7 @@ const ForexTradingPage = () => {
               </p>
             </section>
             <section className="space-y-4">
-              <p>What is Leverage?</p>
+              <p className="font-bold">What is Leverage?</p>
               <p>
                 Leverage is the ability to trade positions larger than the
                 amount of capital you possess. This mechanism allows traders to
@@ -53,7 +53,7 @@ const ForexTradingPage = () => {
               </p>
             </section>
             <section className="space-y-4">
-              <p>When is the forex market open?</p>
+              <p className="font-bold">When is the forex market open?</p>
               <p>
                 Due to different time zones, the international forex market is
                 open 24 hours a day — from 5 p.m. Eastern Standard Time (EST) on

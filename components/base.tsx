@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Base = () => {
   return (
-    <Card className="bottom-0 bg-[#0b1118] max-w-full lg:max-w-screen-xl border-none">
+    <Card className="bottom-0 bg-[#0b1118] max-w-full lg:max-w-screen-xl border-none rounded-2xl">
       <CardContent className="flex flex-col lg:flex-row text-start space-y-10 space-x-0 lg:space-y-0 lg:space-x-20 py-10 px-6 sm:px-10 md:px-14 lg:px-20 font-normal leading-loose">
         <section className="space-y-4 w-full">
           <p>

@@ -17,7 +17,7 @@ const Banner = ({ title, className, subtitle }: Bannerprops) => {
       )}
     >
       <div className="bg-black opacity-70 flex flex-col items-center justify-center w-full h-full space-y-6">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-center font-extrabold">
           {title}
         </h1>
         <h3 className="text-sm sm:text-base md:text-lg lg:text-xl text-center font-medium">
