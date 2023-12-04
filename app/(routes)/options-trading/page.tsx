@@ -11,7 +11,7 @@ const OptionsTradingPage = () => {
         subtitle="Trade Binary Options"
       />
       <div className="py-6 px-6 sm:px-10 md:px-14 lg:px-20 mx-auto">
-        <Card className="w-full border-none bg-[#0b1118] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
+        <Card className="w-full border-none bg-[#f5f5f5] dark:bg-[#0b1118] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
           <CardContent className="flex flex-col text-start space-y-12 py-8 px-6 sm:px-10 md:px-14 lg:px-20 font-normal leading-loose">
             <section className="space-y-4">
               <p>

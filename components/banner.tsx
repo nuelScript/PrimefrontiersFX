@@ -12,11 +12,11 @@ const Banner = ({ title, className, subtitle }: Bannerprops) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center w-full h-[40vh] bg-cover bg-center bg-no-repeat bg-fixed",
+        "flex items-center justify-center w-full h-[45vh] bg-cover bg-center bg-no-repeat bg-fixed",
         className
       )}
     >
-      <div className="bg-black opacity-70 flex flex-col items-center justify-center w-full h-full space-y-6">
+      <div className="bg-white/25 dark:bg-gray-900 opacity-70 flex flex-col items-center justify-center w-full h-full space-y-6">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-center font-extrabold">
           {title}
         </h1>

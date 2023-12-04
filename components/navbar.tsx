@@ -25,7 +25,7 @@ const nunito = Nunito({
 
 const Navbar = () => {
   return (
-    <div className="sticky top-0 w-full flex justify-between py-4 px-8 bg-black z-10">
+    <div className="sticky top-0 w-full flex justify-between py-4 px-8 bg-white dark:bg-black z-10">
       <div className="flex flex-1 items-center space-x-8">
         <Sheet>
           <SheetTrigger asChild>
@@ -35,7 +35,7 @@ const Navbar = () => {
               <span className="inline-flex h-[2px] w-full -translate-x-1 transform bg-primary transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:bg-sky-700 dark:group-hover:bg-sky-300 group-active:bg-sky-300"></span>
             </div>
           </SheetTrigger>
-          <SheetContent></SheetContent>
+          <SheetContent side="left"></SheetContent>
         </Sheet>
         <Link href="/">
           <p className="text-base font-semibold">PrimefrontiersFX</p>
@@ -45,7 +45,9 @@ const Navbar = () => {
         {routes.map((route) => (
           <Link key={route.href} href={route.href}>
             <div
-              className={cn("hover:text-sky-300 font-semibold lg:block hidden")}
+              className={cn(
+                "dark:hover:text-sky-400 hover:text-sky-500 font-semibold lg:block hidden"
+              )}
             >
               {route.label}
             </div>
