@@ -1,33 +1,20 @@
-import { ModeToggle } from "./mode-toggle";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
+import { UserButton } from "@clerk/nextjs";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-const routes = [
-  {
-    label: "Contact Us",
-    href: "/contact",
-  },
-  {
-    label: "Sign In",
-    href: "/sign-in",
-  },
-  {
-    label: "Sign Up",
-    href: "/sign-up",
-  },
-];
 const nunito = Nunito({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const Navbar = () => {
+const DashboardNavbar = () => {
   return (
     <div
       className={cn(
-        "sticky top-0 w-full flex justify-between py-4 px-8 bg-white dark:bg-black z-10",
+        "w-full md:w-3/4 flex justify-between py-4 px-8 sticky top-0 bg-white dark:bg-black z-10 shadow-sm mb-4",
         nunito.className
       )}
     >
@@ -47,21 +34,19 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex items-center space-x-8">
-        {routes.map((route) => (
-          <Link key={route.href} href={route.href}>
-            <div
-              className={cn(
-                "dark:hover:text-sky-400 hover:text-sky-500 font-semibold lg:block hidden"
-              )}
-            >
-              {route.label}
-            </div>
-          </Link>
-        ))}
+        <UserButton
+          showName
+          appearance={{
+            elements: {
+              userButtonOuterIdentifier:
+                "dark:text-white text-black font-semibold mr-2",
+            },
+          }}
+        />
         <ModeToggle />
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default DashboardNavbar;

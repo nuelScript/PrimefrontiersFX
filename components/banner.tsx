@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Nunito } from "next/font/google";
 
 interface Bannerprops {
   title: string;
@@ -8,12 +9,18 @@ interface Bannerprops {
   className: string;
 }
 
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 const Banner = ({ title, className, subtitle }: Bannerprops) => {
   return (
     <div
       className={cn(
         "flex items-center justify-center w-full h-[45vh] bg-cover bg-center bg-no-repeat bg-fixed",
-        className
+        className,
+        nunito.className
       )}
     >
       <div className="bg-white/25 dark:bg-gray-900 opacity-70 flex flex-col items-center justify-center w-full h-full space-y-6">
