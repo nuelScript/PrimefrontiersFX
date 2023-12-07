@@ -30,11 +30,11 @@ const DashboardPage = () => {
           <div className="flex flex-col space-y-4 w-full">
             <div className="flex space-x-20 w-full justify-between">
               <div className="flex flex-col space-y-2">
-                <h3 className="text-sm font-semibold">Total Balance</h3>
+                <h3 className="text-sm font-semibold">Balance</h3>
                 <p className="text-sm text-gray-500">0.00000000 BTC</p>
               </div>
               <div className="flex flex-col space-y-2">
-                <h3 className="text-sm font-semibold">Available Balance</h3>
+                <h3 className="text-sm font-semibold">Deposit</h3>
                 <p className="text-sm text-gray-500">0.00000000 BTC</p>
               </div>
             </div>
@@ -71,12 +71,14 @@ const DashboardPage = () => {
                   Trading Room
                 </div>
               </Link>
-              <div className="flex flex-col space-y-3 font-medium uppercase">
-                <div className="flex items-center justify-center p-6 bg-[#666699] rounded-xl mb-2 hover:bg-[#666699]/50">
-                  <Clock className="w-6 h-6 text-white" />
+              <Link href="">
+                <div className="flex flex-col space-y-3 font-medium uppercase">
+                  <div className="flex items-center justify-center p-6 bg-[#666699] rounded-xl mb-2 hover:bg-[#666699]/50">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  Binary Options
                 </div>
-                Binary Options
-              </div>
+              </Link>
             </div>
           </div>
           <Tabs defaultValue="closed" className="w-full">

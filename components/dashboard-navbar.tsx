@@ -14,7 +14,7 @@ const DashboardNavbar = () => {
   return (
     <div
       className={cn(
-        "w-full md:w-3/4 flex justify-between py-4 px-8 sticky top-0 bg-white dark:bg-black z-10 shadow-sm mb-4",
+        "w-full md:w-3/4 flex justify-between py-4 px-6 sm:px-8 sticky top-0 bg-white dark:bg-black z-10 shadow-sm mb-4",
         nunito.className
       )}
     >
@@ -39,7 +39,7 @@ const DashboardNavbar = () => {
           appearance={{
             elements: {
               userButtonOuterIdentifier:
-                "dark:text-white text-black font-semibold mr-2",
+                "dark:text-white text-black font-semibold mr-2 sm:block hidden",
             },
           }}
         />
