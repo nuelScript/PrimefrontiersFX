@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface DepositProps {
-  userId: string;
+  params: { userId: string };
 }
 
-const DepositList = async ({ userId }: DepositProps) => {
-  const deposits = await getDeposits(userId);
+const DepositList = async ({ params }: DepositProps) => {
+  const deposits = await getDeposits(params.userId);
   return (
     <div className="flex space-x-12 w-full max-w-screen-xl">
       <div className="flex flex-col space-y-4 w-full">

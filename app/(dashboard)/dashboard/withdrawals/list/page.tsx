@@ -4,11 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 interface WithdrawalProps {
-  userId: string;
+  params: { userId: string };
 }
 
-const WithdrawalList = async ({ userId }: WithdrawalProps) => {
-  const withdrawals = await getWithdrawals(userId);
+const WithdrawalList = async ({ params }: WithdrawalProps) => {
+  const withdrawals = await getWithdrawals(params.userId);
   return (
     <div className="flex flex-col items-center space-y-8 w-full max-w-screen-lg group">
       <Card className="flex flex-col items-center justify-center w-full p-8 border-none bg-neutral-100 dark:bg-neutral-800 group-hover:bg-neutral-100/50 dark:group-hover:bg-neutral-800/50">
