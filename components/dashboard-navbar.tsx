@@ -9,16 +9,7 @@ import { ModeToggle } from "./mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
-import {
-  BarChart,
-  Coins,
-  Contact,
-  Folder,
-  Home,
-  Lock,
-  Mail,
-  ShoppingBag,
-} from "lucide-react";
+import { Contact, Home, Mail, ShoppingBag } from "lucide-react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const nunito = Nunito({
