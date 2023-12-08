@@ -5,10 +5,10 @@ import { Clock, Home, Hourglass } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
-let tvScriptLoadingPromise;
+let tvScriptLoadingPromise: Promise<Event> | undefined;
 
 export default function TradingViewWidget() {
-  const onLoadScriptRef = useRef();
+  const onLoadScriptRef = useRef<() => void>();
 
   useEffect(() => {
     onLoadScriptRef.current = createWidget;
@@ -29,27 +29,28 @@ export default function TradingViewWidget() {
       () => onLoadScriptRef.current && onLoadScriptRef.current()
     );
 
-    return () => (onLoadScriptRef.current = null);
+    return () => (onLoadScriptRef.current = undefined);
 
     function createWidget() {
       if (
         document.getElementById("tradingview_3a234") &&
         "TradingView" in window
-      ) {
-        new window.TradingView.widget({
-          autosize: true,
-          symbol: "NASDAQ:AAPL",
-          interval: "D",
-          timezone: "Etc/UTC",
-          theme: "dark",
-          style: "1",
-          locale: "en",
-          enable_publishing: false,
-          allow_symbol_change: true,
-          withdateranges: true,
-          container_id: "tradingview_3a234",
-        });
-      }
+      )
+        if (typeof window.TradingView !== "undefined") {
+          new (window.TradingView?.widget as any)({
+            autosize: true,
+            symbol: "NASDAQ:AAPL",
+            interval: "D",
+            timezone: "Etc/UTC",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            enable_publishing: false,
+            allow_symbol_change: true,
+            withdateranges: true,
+            container_id: "tradingview_3a234",
+          });
+        }
     }
   }, []);
 
