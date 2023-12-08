@@ -71,7 +71,7 @@ const DashboardPage = () => {
                   Trading Room
                 </div>
               </Link>
-              <Link href="">
+              <Link href="/dashboard/trading/binary-options">
                 <div className="flex flex-col space-y-3 font-medium uppercase">
                   <div className="flex items-center justify-center p-6 bg-[#666699] rounded-xl mb-2 hover:bg-[#666699]/50">
                     <Clock className="w-6 h-6 text-white" />

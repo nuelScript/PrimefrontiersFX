@@ -2,7 +2,22 @@ import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  BarChart,
+  Coins,
+  Contact,
+  Folder,
+  Home,
+  Lock,
+  Mail,
+} from "lucide-react";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 const routes = [
   {
@@ -40,7 +55,117 @@ const Navbar = () => {
               <span className="inline-flex h-[2px] w-full -translate-x-1 transform bg-primary transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:bg-sky-700 dark:group-hover:bg-sky-300 group-active:bg-sky-300"></span>
             </div>
           </SheetTrigger>
-          <SheetContent side="left"></SheetContent>
+          <SheetContent side="left">
+            <ScrollArea className="h-full w-full px-4">
+              <div className="flex flex-col space-y-4 pt-10">
+                <Link
+                  href="/"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Home className="w-5 h-5" /> <span>Home</span>
+                </Link>
+                <Link
+                  href="/sign-in"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Contact className="w-5 h-5" />
+                  <span>Sign In</span>
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Contact className="w-5 h-5" />
+                  <span>Sign Up</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Contact Us</span>
+                </Link>
+                <Link
+                  href="/about-us"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Contact className="w-5 h-5" />
+                  <span>About Us</span>
+                </Link>
+                <Link
+                  href="/cookie-policy"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Lock className="w-5 h-5" />
+                  <span>Cookie Policy</span>
+                </Link>
+                <Link
+                  href="/privacy-policy"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Lock className="w-5 h-5" />
+                  <span>Privacy Policy</span>
+                </Link>
+                <Link
+                  href="/terms"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Folder className="w-5 h-5" />
+                  <span>Terms of Service</span>
+                </Link>
+                <Link
+                  href="/forex-trading"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <BarChart className="w-5 h-5" />
+                  <span>Forex Trading</span>
+                </Link>
+                <Link
+                  href="/stocks-trading"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <BarChart className="w-5 h-5" />
+                  <span>Stocks Trading</span>
+                </Link>
+                <Link
+                  href="/crypto-trading"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Coins className="w-5 h-5" />
+                  <span>Crypto Trading</span>
+                </Link>
+                <Link
+                  href="/options-trading"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Coins className="w-5 h-5" />
+                  <span>Options Trading</span>
+                </Link>
+                <Link
+                  href="/about-mining"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Coins className="w-5 h-5" />
+                  <span>About Mining</span>
+                </Link>
+                <Link
+                  href="/bitcoin-mining"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Coins className="w-5 h-5" />
+                  <span>Bitcoin Mining</span>
+                </Link>
+                <Link
+                  href="/dodgecoin-mining"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Coins className="w-5 h-5" />
+                  <span>Dodgecoin Mining</span>
+                </Link>
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
+          </SheetContent>
         </Sheet>
         <Link href="/">
           <p className="text-base font-semibold">PrimefrontiersFX</p>
