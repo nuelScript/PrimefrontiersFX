@@ -1,11 +1,20 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Clock, Home, Hourglass } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
-let tvScriptLoadingPromise: any;
+declare global {
+  interface Window {
+    TradingView: any;
+  }
+}
+
+let tvScriptLoadingPromise: Promise<Event> | undefined;
 
 export default function TradingViewWidget() {
-  const onLoadScriptRef = useRef();
+  const onLoadScriptRef = useRef<() => void>();
 
   useEffect(() => {
     onLoadScriptRef.current = createWidget;
@@ -26,45 +35,71 @@ export default function TradingViewWidget() {
       () => onLoadScriptRef.current && onLoadScriptRef.current()
     );
 
-    return () => (onLoadScriptRef.current = null);
+    return () => (onLoadScriptRef.current = undefined);
 
     function createWidget() {
       if (
         document.getElementById("tradingview_3a234") &&
         "TradingView" in window
-      ) {
-        new window.TradingView.widget({
-          autosize: true,
-          symbol: "NASDAQ:AAPL",
-          interval: "D",
-          timezone: "Etc/UTC",
-          theme: "dark",
-          style: "1",
-          locale: "en",
-          enable_publishing: false,
-          allow_symbol_change: true,
-          container_id: "tradingview_3a234",
-        });
-      }
+      )
+        if (typeof window.TradingView !== "undefined" && window.TradingView) {
+          const TradingViewWidget: any = window.TradingView.widget;
+
+          if (typeof TradingViewWidget !== "undefined") {
+            new TradingViewWidget({
+              autosize: true,
+              symbol: "NASDAQ:AAPL",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              enable_publishing: false,
+              allow_symbol_change: true,
+              withdateranges: true,
+              container_id: "tradingview_3a234",
+            });
+          }
+        }
     }
   }, []);
 
   return (
-    <div className="h-full w-full">
-      <div
-        id="tradingview_3a234"
-        className="w-full h-full"
-        style={{ height: "calc(100% - 32px)", width: "100%" }}
-      />
-      <div className="tradingview-widget-copyright">
-        <a
-          href="https://www.tradingview.com/"
-          rel="noopener nofollow"
-          target="_blank"
+    <div className="flex h-screen w-full max-w-screen-md md:max-w-screen-xl">
+      <div className="flex flex-col space-y-10 w-1/2">
+        <Link href="/dashboard" className="hover:bg-opacity-50">
+          <Button className="flex space-x-2 w-40" variant="secondary">
+            <Home className="w-4 h-4" /> <span>Home</span>
+          </Button>
+        </Link>
+        <Link
+          href="/dashboard/trading/binary-options"
+          className="hover:bg-opacity-50"
         >
-          <span className="blue-text">Track all markets on TradingView</span>
-        </a>
+          <Button className="flex space-x-2 w-40" variant="secondary">
+            <Clock className="h-4 w-4" /> <span>Binary Options</span>
+          </Button>
+        </Link>
+        <Link
+          href="/dashboard/trading/trade-room"
+          className="hover:bg-opacity-50"
+        >
+          <Button className="flex space-x-2 flex-1 w-40" variant="secondary">
+            <Hourglass className="h-4 w-4" />
+            <span>Open Trades</span>
+          </Button>
+        </Link>
+        <Link
+          href="/dashboard/trading/trade-room"
+          className="hover:bg-opacity-50"
+        >
+          <Button className="flex space-x-2 flex-1 w-40" variant="secondary">
+            <Hourglass className="h-4 w-4" />
+            <span>Closed Trades</span>
+          </Button>
+        </Link>
       </div>
+      <div id="tradingview_3a234" className="w-full" />
     </div>
   );
 }
