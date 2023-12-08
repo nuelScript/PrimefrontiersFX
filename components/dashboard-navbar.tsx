@@ -1,9 +1,25 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
+import {
+  BarChart,
+  Coins,
+  Contact,
+  Folder,
+  Home,
+  Lock,
+  Mail,
+  ShoppingBag,
+} from "lucide-react";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -27,7 +43,48 @@ const DashboardNavbar = () => {
               <span className="inline-flex h-[2px] w-full -translate-x-1 transform bg-primary transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:bg-sky-700 dark:group-hover:bg-sky-300 group-active:bg-sky-300"></span>
             </div>
           </SheetTrigger>
-          <SheetContent side="left"></SheetContent>
+          <SheetContent side="left">
+            <SheetClose></SheetClose>
+            <ScrollArea className="h-full w-full px-4">
+              <div className="flex flex-col space-y-4 pt-10">
+                <Link
+                  href="/dashboard"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Home className="w-5 h-5" /> <span>Home</span>
+                </Link>
+                <Link
+                  href="/dashboard/deposits/list"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Contact className="w-5 h-5" />
+                  <span>Deposits</span>
+                </Link>
+                <Link
+                  href="/dashboard/referral"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Contact className="w-5 h-5" />
+                  <span>My Referrals</span>
+                </Link>
+                <Link
+                  href="/dashboard/withdrawals/list"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Withdrawals</span>
+                </Link>
+                <Link
+                  href="/dashboard/deposits/buy"
+                  className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
+                >
+                  <ShoppingBag className="w-5 h-5" />
+                  <span>Buy Crypto</span>
+                </Link>
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
+          </SheetContent>
         </Sheet>
         <Link href="/">
           <p className="text-base font-semibold">PrimefrontiersFX</p>
