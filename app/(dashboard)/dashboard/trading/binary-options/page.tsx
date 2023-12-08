@@ -5,6 +5,12 @@ import { Clock, Home, Hourglass } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
+declare global {
+  interface Window {
+    TradingView: any;
+  }
+}
+
 let tvScriptLoadingPromise: Promise<Event> | undefined;
 
 export default function TradingViewWidget() {
@@ -36,20 +42,24 @@ export default function TradingViewWidget() {
         document.getElementById("tradingview_3a234") &&
         "TradingView" in window
       )
-        if (typeof window.TradingView !== "undefined") {
-          new (window.TradingView?.widget as any)({
-            autosize: true,
-            symbol: "NASDAQ:AAPL",
-            interval: "D",
-            timezone: "Etc/UTC",
-            theme: "dark",
-            style: "1",
-            locale: "en",
-            enable_publishing: false,
-            allow_symbol_change: true,
-            withdateranges: true,
-            container_id: "tradingview_3a234",
-          });
+        if (typeof window.TradingView !== "undefined" && window.TradingView) {
+          const TradingViewWidget: any = window.TradingView.widget;
+
+          if (typeof TradingViewWidget !== "undefined") {
+            new TradingViewWidget({
+              autosize: true,
+              symbol: "NASDAQ:AAPL",
+              interval: "D",
+              timezone: "Etc/UTC",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              enable_publishing: false,
+              allow_symbol_change: true,
+              withdateranges: true,
+              container_id: "tradingview_3a234",
+            });
+          }
         }
     }
   }, []);
