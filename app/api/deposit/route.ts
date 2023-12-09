@@ -44,6 +44,7 @@ export async function POST(req: Request) {
       status: 200,
     });
   } catch (error) {
+    console.log(`[DEPOSITS_POST]`, error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

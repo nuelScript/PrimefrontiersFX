@@ -43,6 +43,7 @@ export async function POST(req: Request) {
 
     return new NextResponse("Withdrawal created successfully", { status: 200 });
   } catch (error) {
+    console.log(`[WITHDRAWALS_POST]`, error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

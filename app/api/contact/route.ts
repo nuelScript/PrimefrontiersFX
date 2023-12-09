@@ -11,8 +11,8 @@ export async function POST(req: Request) {
     port: 587,
     secure: false,
     auth: {
-      user: "manuelscript65@gmail.com",
-      pass: "xzms vbwd ylzj hrhm ",
+      user: process.env.EMAIL_ADDRESS,
+      pass: process.env.APP_PASSWORD,
     },
   });
 
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
     return new NextResponse("Email sent successfully", { status: 200 });
   } catch (error) {
+    console.log(`[CONTACT_POST]`, error);
     return new NextResponse("Error sending mail", { status: 500 });
   }
 }
