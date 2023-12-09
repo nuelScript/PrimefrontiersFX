@@ -20,6 +20,7 @@ export default authMiddleware({
     "/terms",
     "/risk",
     "/copy-trading",
+    "api/contact",
   ],
 });
 
