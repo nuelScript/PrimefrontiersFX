@@ -9,7 +9,6 @@ const PrivacyPolicyPage = () => {
       <Banner
         title="Privacy Policy"
         className="bg-[url(/images/shubham-s-web3-L6q_LdO52wo-unsplash.jpg)]"
-        subtitle="Last revised: December 4, 2023"
       />
       <div className="py-6 px-6 sm:px-10 md:px-14 lg:px-20 mx-auto">
         <Card className="w-full border-none bg-[#f5f5f5] dark:bg-[#0b1118] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
