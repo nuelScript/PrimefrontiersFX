@@ -2,12 +2,7 @@ import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   BarChart,
   Coins,
@@ -17,7 +12,7 @@ import {
   Lock,
   Mail,
 } from "lucide-react";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const routes = [
   {

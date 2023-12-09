@@ -12,11 +12,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { Mail } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import * as z from "zod";
 
 const ContactPage = () => {
+  const router = useRouter();
   const formSchema = z.object({
     name: z.string().min(3, { message: "Enter your name" }),
     email: z.string().min(1, { message: "Email is required" }).email({
@@ -35,7 +39,19 @@ const ContactPage = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    try {
+      await axios.post("/api/contact", data);
+      toast.success("Email sent successfully");
+      form.reset();
+    } catch (error: any) {
+      if (error?.response?.status === 400) {
+        toast.error("400 Error");
+      } else {
+        toast.error("Something Went Wrong!");
+      }
+    } finally {
+      router.refresh();
+    }
   };
 
   const isLoading = form.formState.isSubmitting;
@@ -97,6 +113,7 @@ const ContactPage = () => {
                   <FormItem>
                     <FormControl>
                       <Textarea
+                        disabled={isLoading}
                         placeholder="Message"
                         className="resize-none"
                         rows={8}
