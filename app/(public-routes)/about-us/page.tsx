@@ -8,7 +8,7 @@ const AboutUs = () => {
         className="bg-[url(/images/kanchanara-9pCV2MB65y8-unsplash.jpg)] bg-center"
         title="About Us"
       />
-      <div className="py-6 px-20">
+      <div className="py-6">
         <Card className="w-full border-none bg-[#f5f5f5] dark:bg-[#0b1118] max-w-full lg:max-w-screen-xl">
           <CardContent className="flex flex-col text-start py-8 px-6 space-y-8 sm:px-10 md:px-14 lg:px-20 font-normal leading-loose">
             <section className="space-y-6">
