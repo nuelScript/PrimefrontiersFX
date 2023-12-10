@@ -35,7 +35,6 @@ const DashboardNavbar = () => {
             </div>
           </SheetTrigger>
           <SheetContent side="left">
-            <SheetClose></SheetClose>
             <ScrollArea className="h-full w-full px-4">
               <div className="flex flex-col space-y-4 pt-10">
                 <Link
@@ -77,7 +76,7 @@ const DashboardNavbar = () => {
             </ScrollArea>
           </SheetContent>
         </Sheet>
-        <Link href="/">
+        <Link href="/dashboard">
           <p className="text-base font-semibold">PrimefrontiersFX</p>
         </Link>
       </div>

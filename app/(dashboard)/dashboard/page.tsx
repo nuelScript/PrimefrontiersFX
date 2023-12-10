@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const DashboardPage = () => {
   return (
-    <Tabs defaultValue="trading" className="w-full md:w-3/4">
+    <Tabs defaultValue="trading" className="w-full lg:w-3/4 lg:p-0 p-8">
       <TabsList className="grid grid-cols-2 w-full">
         <TabsTrigger value="trading" className="flex flex-1 items-center ">
           <BarChart className="w-4 h-4 mr-2" />
@@ -26,7 +26,7 @@ const DashboardPage = () => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="trading">
-        <div className="flex space-x-8 w-full pt-4">
+        <div className="flex lg:flex-row flex-col lg:space-x-8 space-x-0 lg:space-y-0 space-y-8 w-full pt-4">
           <div className="flex flex-col space-y-4 w-full">
             <div className="flex space-x-20 w-full justify-between">
               <div className="flex flex-col space-y-2">
@@ -92,14 +92,14 @@ const DashboardPage = () => {
             </TabsList>
             <TabsContent value="closed" className="pt-4 h-4/5">
               <Card className="w-full border-none shadow-none flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 h-full">
-                <CardContent className="flex items-center justify-center w-full">
+                <CardContent className="flex items-center justify-center w-full lg:p-0 p-10">
                   <h3 className="font-bold text-base uppercase">No Data</h3>
                 </CardContent>
               </Card>
             </TabsContent>
             <TabsContent value="active" className="pt-4 h-4/5">
               <Card className="w-full border-none shadow-none flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 h-full">
-                <CardContent className="flex items-center justify-center w-full">
+                <CardContent className="flex items-center justify-center w-full lg:p-0 p-10">
                   <h3 className="font-bold text-base uppercase">
                     No Open Positions
                   </h3>
