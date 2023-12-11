@@ -1,7 +1,22 @@
-import { getWithdrawals } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import prismadb from "@/lib/prismadb";
+import { auth } from "@clerk/nextjs";
+
+const { userId } = auth();
+
+if (!userId) {
+  throw new Error("User is not logged in");
+}
+
+export const getWithdrawals = async () => {
+  const withdrawals = await prismadb.withdrawal.findMany({
+    where: { userId },
+  });
+
+  return withdrawals;
+};
 
 const WithdrawalList = async () => {
   const withdrawals = await getWithdrawals();

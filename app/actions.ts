@@ -1,3 +1,5 @@
+"use server";
+
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
 const { userId } = auth();
@@ -7,7 +9,6 @@ if (!userId) {
 }
 
 export const getDeposits = async () => {
-  "use server";
   const deposits = await prismadb.deposit.findMany({
     where: { userId },
   });
@@ -16,7 +17,6 @@ export const getDeposits = async () => {
 };
 
 export const getWithdrawals = async () => {
-  "use server";
   const withdrawals = await prismadb.withdrawal.findMany({
     where: { userId },
   });

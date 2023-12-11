@@ -1,8 +1,23 @@
-import { getDeposits } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { DollarSign } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import prismadb from "@/lib/prismadb";
+import { auth } from "@clerk/nextjs";
+
+const { userId } = auth();
+
+if (!userId) {
+  throw new Error("User is not logged in");
+}
+
+export const getDeposits = async () => {
+  const deposits = await prismadb.deposit.findMany({
+    where: { userId },
+  });
+
+  return deposits;
+};
 
 const DepositList = async () => {
   const deposits = await getDeposits();
