@@ -2,7 +2,6 @@
 
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
-import { getAuth } from "@clerk/nextjs/server";
 
 const { userId } = auth();
 
