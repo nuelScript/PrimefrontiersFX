@@ -14,7 +14,7 @@ model Deposit {
   id                String   @id @default(uuid())
   firstName         String
   lastName          String?
-  userId            String   @unique
+  userId            String
   amount            String
   bitcoinEquivalent String
   currency          String
@@ -28,7 +28,7 @@ model Withdrawal {
   id            String   @id @default(uuid())
   firstName     String
   lastName      String?
-  userId        String   @unique
+  userId        String
   wallet        String
   amount        String
   currency      String
