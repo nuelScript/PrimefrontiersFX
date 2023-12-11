@@ -11,8 +11,13 @@ import {
   Store,
 } from "lucide-react";
 import Link from "next/link";
+import { fetchMiningBalance, fetchTradingBalance } from "@/lib/balance";
 
-const DashboardPage = () => {
+const DashboardPage = async () => {
+  const tradingBalance = parseFloat(await fetchTradingBalance());
+  const miningBalance = parseFloat(await fetchMiningBalance());
+
+  const totalDeposits = tradingBalance + miningBalance;
   return (
     <Tabs defaultValue="trading" className="w-full lg:w-3/4 lg:p-0 p-8">
       <TabsList className="grid grid-cols-2 w-full">
@@ -30,12 +35,12 @@ const DashboardPage = () => {
           <div className="flex flex-col space-y-4 w-full">
             <div className="flex space-x-20 w-full justify-between">
               <div className="flex flex-col space-y-2">
-                <h3 className="text-sm font-semibold">Balance</h3>
-                <p className="text-sm text-gray-500">0.00000000 BTC</p>
+                <h3 className="text-sm font-semibold">Trading Balance</h3>
+                <p className="text-sm text-gray-500">$ {tradingBalance}</p>
               </div>
               <div className="flex flex-col space-y-2">
-                <h3 className="text-sm font-semibold">Deposit</h3>
-                <p className="text-sm text-gray-500">0.00000000 BTC</p>
+                <h3 className="text-sm font-semibold">Total Balance</h3>
+                <p className="text-sm text-gray-500">$ {totalDeposits}</p>
               </div>
             </div>
             <div className="grid grid-cols-2 col-span-4 gap-8">
@@ -112,7 +117,7 @@ const DashboardPage = () => {
       <TabsContent value="mining" className="flex flex-col items-center pt-4">
         <Card className="border-none shadow-none bg-transparent w-full md:max-w-screen-2xl">
           <div className="flex flex-col space-y-4 items-center">
-            <h3 className="font-bold text-4xl">$ 0.00</h3>
+            <h3 className="font-bold text-4xl">$ {miningBalance}</h3>
             <h5 className="font-normal text-xs uppercase">Mining balance</h5>
             <Link
               href="/dashboard/mining"

@@ -22,7 +22,7 @@ const DepositList = async () => {
   };
   const deposits = await getDeposits();
   return (
-    <div className="flex space-x-12 w-full max-w-screen-xl">
+    <div className="flex lg:flex-row flex-col lg:space-x-12 lg:space-y-0 space-y-12 space-x-0 w-full max-w-screen-xl p-4">
       <div className="flex flex-col space-y-4 w-full">
         <div className="flex justify-center">
           <Link href="/dashboard/deposits/crypto" passHref>

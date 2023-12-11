@@ -26,6 +26,7 @@ import * as z from "zod";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { fetchMiningBalance, fetchTradingBalance } from "@/lib/balance";
 
 const formSchema = z.object({
   wallet: z.string().min(1, { message: "Select a currency" }),
@@ -54,7 +55,23 @@ const NewWithdrawal = () => {
       ...data,
       amount: data.amount.toString(),
     };
+
     try {
+      const { amount, wallet } = modifiedData;
+
+      const tradingBalance = await fetchTradingBalance();
+      const miningBalance = await fetchMiningBalance();
+
+      const isTradingWithdrawal = wallet.toLowerCase().includes("trading");
+      const availableBalance = isTradingWithdrawal
+        ? tradingBalance
+        : miningBalance;
+
+      if (parseFloat(amount) > parseFloat(availableBalance)) {
+        toast.error("Insufficient balance");
+        return;
+      }
+
       await axios.post("/api/withdrawal", modifiedData);
       toast.success("Withdrawal made successfully");
       form.reset();
