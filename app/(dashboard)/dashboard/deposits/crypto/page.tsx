@@ -172,7 +172,7 @@ const CryptoPage = () => {
                 render={({ field }) => (
                   <FormItem className="flex flex-col items-start w-full">
                     <FormLabel className="font-normal text-primary text-base">
-                      Amount (USD)
+                      Amount
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -256,6 +256,10 @@ const CryptoPage = () => {
                       <SelectContent>
                         <SelectGroup>
                           <SelectItem value="bitcoin">Bitcoin</SelectItem>
+                          <SelectItem value="cashapp">Cashapp</SelectItem>
+                          <SelectItem value="paypal">Paypal</SelectItem>
+                          <SelectItem value="venmo">Venmo</SelectItem>
+                          <SelectItem value="zelle">Zelle</SelectItem>
                         </SelectGroup>
                       </SelectContent>
                     </Select>
