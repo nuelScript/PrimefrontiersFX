@@ -20,7 +20,9 @@ const DepositList = async () => {
 
     return deposits;
   };
+
   const deposits = await getDeposits();
+
   return (
     <div className="flex lg:flex-row flex-col lg:space-x-12 lg:space-y-0 space-y-12 space-x-0 w-full max-w-screen-xl p-4">
       <div className="flex flex-col space-y-4 w-full">
