@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { DollarSign } from "lucide-react";
+import { DollarSign, Euro, PoundSterling } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import prismadb from "@/lib/prismadb";
@@ -41,6 +41,12 @@ const DepositList = async () => {
             <div className="flex flex-col space-y-4">
               <p className=" flex items-center font-medium text-sm">
                 {deposit.currency === "usd" ? (
+                  <DollarSign className="w-4 h-4 p-0" />
+                ) : deposit.currency || deposit.currency === "eur" ? (
+                  <Euro className="w-4 h-4 p-0" />
+                ) : deposit.currency || deposit.currency === "gbp" ? (
+                  <PoundSterling className="w-4 h-4 p-o" />
+                ) : deposit.currency || deposit.currency === "aud" ? (
                   <DollarSign className="w-4 h-4 p-0" />
                 ) : (
                   deposit.currency
