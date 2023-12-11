@@ -38,7 +38,7 @@ const DepositList = async () => {
             key={deposit.id}
             className="flex justify-between items-center w-full p-8 group bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-xl"
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col w-full space-y-4">
               <p className=" flex items-center font-medium text-sm">
                 {deposit.currency === "usd" ? (
                   <DollarSign className="w-4 h-4 p-0" />

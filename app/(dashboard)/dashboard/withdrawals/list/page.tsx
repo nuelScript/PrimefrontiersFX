@@ -21,8 +21,8 @@ const WithdrawalList = async () => {
 
   const withdrawals = await getWithdrawals();
   return (
-    <div className="flex flex-col items-center space-y-8 w-full max-w-screen-lg group lg:p-0 p-8">
-      <Card className="flex flex-col items-center justify-center w-full p-8 border-none bg-neutral-100 dark:bg-neutral-800 group-hover:bg-neutral-100/50 dark:group-hover:bg-neutral-800/50">
+    <div className="flex flex-col items-center space-y-8 w-full max-w-screen-lg group lg:p-0 p-4">
+      <Card className="flex flex-col items-center justify-center w-full p-2 lg:p-8 border-none bg-neutral-100 dark:bg-neutral-800 group-hover:bg-neutral-100/50 dark:group-hover:bg-neutral-800/50">
         <CardContent className="text-center font-semibold capitalize text-sm w-full">
           {withdrawals
             ? withdrawals.map((withdrawal) => (
@@ -31,10 +31,12 @@ const WithdrawalList = async () => {
                   className="flex justify-between items-center w-full group rounded-xl"
                 >
                   <div className="flex flex-col space-y-2">
-                    <span className="font-medium text-base text-start">
+                    <span className="font-semibold text-base text-start">
                       Time:
                     </span>
-                    {new Date(withdrawal.createdAt).toLocaleString("en-GB")}
+                    <span className="font-normal lg:text-base text-sm">
+                      {new Date(withdrawal.createdAt).toLocaleString("en-GB")}
+                    </span>
                   </div>
                   <div className="flex flex-col space-y-2">
                     <p className=" flex items-center space-x-1 font-medium text-sm">
