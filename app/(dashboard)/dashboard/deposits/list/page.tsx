@@ -1,4 +1,4 @@
-import { getDeposits } from "@/app/actions/get-deposits";
+import { getDeposits } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { DollarSign } from "lucide-react";
 import Image from "next/image";
