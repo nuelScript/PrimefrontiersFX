@@ -4,12 +4,8 @@ import { DollarSign } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface DepositProps {
-  params: { userId: string };
-}
-
-const DepositList = async ({ params }: DepositProps) => {
-  const deposits = await getDeposits(params.userId);
+const DepositList = async () => {
+  const deposits = await getDeposits();
   return (
     <div className="flex space-x-12 w-full max-w-screen-xl">
       <div className="flex flex-col space-y-4 w-full">
