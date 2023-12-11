@@ -24,10 +24,10 @@ const Banner = ({ title, className, subtitle }: Bannerprops) => {
       )}
     >
       <div className="bg-white/25 dark:bg-gray-900 opacity-70 flex flex-col items-center justify-center w-full h-full space-y-6">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-center font-extrabold">
+        <h1 className="text-5xl lg:text-6xl text-center font-extrabold">
           {title}
         </h1>
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl text-center font-medium">
+        <h3 className="text-lg lg:text-xl text-center font-medium">
           {subtitle}
         </h3>
       </div>
