@@ -5,21 +5,21 @@ import Link from "next/link";
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
 
-const { userId } = auth();
-
-if (!userId) {
-  throw new Error("User is not logged in");
-}
-
-export const getDeposits = async () => {
-  const deposits = await prismadb.deposit.findMany({
-    where: { userId },
-  });
-
-  return deposits;
-};
-
 const DepositList = async () => {
+  "use server";
+  const { userId } = auth();
+
+  if (!userId) {
+    throw new Error("User is not logged in");
+  }
+
+  const getDeposits = async () => {
+    const deposits = await prismadb.deposit.findMany({
+      where: { userId },
+    });
+
+    return deposits;
+  };
   const deposits = await getDeposits();
   return (
     <div className="flex space-x-12 w-full max-w-screen-xl">

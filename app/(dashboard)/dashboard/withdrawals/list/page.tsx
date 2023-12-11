@@ -4,21 +4,21 @@ import Link from "next/link";
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
 
-const { userId } = auth();
-
-if (!userId) {
-  throw new Error("User is not logged in");
-}
-
-export const getWithdrawals = async () => {
-  const withdrawals = await prismadb.withdrawal.findMany({
-    where: { userId },
-  });
-
-  return withdrawals;
-};
-
 const WithdrawalList = async () => {
+  "use server";
+  const { userId } = auth();
+
+  if (!userId) {
+    throw new Error("User is not logged in");
+  }
+  const getWithdrawals = async () => {
+    const withdrawals = await prismadb.withdrawal.findMany({
+      where: { userId },
+    });
+
+    return withdrawals;
+  };
+
   const withdrawals = await getWithdrawals();
   return (
     <div className="flex flex-col items-center space-y-8 w-full max-w-screen-lg group lg:p-0 p-8">
