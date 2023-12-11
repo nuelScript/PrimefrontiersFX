@@ -64,7 +64,7 @@ const DepositList = async () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col items-center space-y-4 p-8 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-xl">
+      <div className="flex flex-col h-fit items-center space-y-4 p-8 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-xl">
         <Image
           src="/images/kanchanara-fsSGgTBoX9Y-unsplash.jpg"
           alt="deposit_image"
