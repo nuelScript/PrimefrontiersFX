@@ -10,10 +10,18 @@ const Paymentmethod = ({ params }: { params: { paymentmethod: string } }) => {
         <span> Please contact </span>
         <Link
           href="mailto:info@primefrontiersFX.com"
-          className="text-slate-700 hover:underline"
+          className="dark:text-amber-500 text-slate-800 hover:underline hover:text-opacity-50"
         >
           info@primefrontiersFX.com
-        </Link>
+        </Link>{" "}
+        or text{" "}
+        <Link
+          href="tel:+13185750040"
+          className="dark:text-amber-500 text-slate-800 hover:underline hover:text-opacity-50"
+        >
+          +1(318)575-0040
+        </Link>{" "}
+        on WhatsApp
         <span>
           {"  "}
           to make payment via {params.paymentmethod}
