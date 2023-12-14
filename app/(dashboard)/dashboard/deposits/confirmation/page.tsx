@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const ConfirmationPage = () => {
   const [copied, setCopied] = useState(false);
@@ -17,6 +18,22 @@ const ConfirmationPage = () => {
       setCopied(true);
     } catch (err) {
       toast.error("Failed to copy address");
+    }
+  };
+
+  const onSubmit = async () => {
+    try {
+      const modifiedData = localStorage.getItem("depositData");
+      const modifiedDataObject = JSON.parse(modifiedData || "");
+      await axios.post("/api/deposits", modifiedDataObject);
+      toast.success("Deposit Request Sent!");
+      router.push("/dashboard/deposits/list");
+    } catch (error: any) {
+      if (error?.response?.status === 400) {
+        toast.error("400 Error");
+      } else {
+        toast.error("Something Went Wrong!");
+      }
     }
   };
   return (
@@ -33,10 +50,7 @@ const ConfirmationPage = () => {
       >
         {copied ? "Address Copied!" : "Copy Address"}
       </Button>
-      <Button
-        className="p-4 capitalize"
-        onClick={() => router.push("/dashboard/deposits/list")}
-      >
+      <Button className="p-4 capitalize" onClick={() => onSubmit()}>
         Confirm Payment
       </Button>
     </div>

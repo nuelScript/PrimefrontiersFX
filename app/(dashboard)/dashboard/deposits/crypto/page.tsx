@@ -28,8 +28,9 @@ import { useEffect, useState } from "react";
 import { getCoinPrice } from "@/lib/helpers";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { stringify } from "querystring";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   amount: z.coerce.number().min(100, { message: "Amount cannot be below 100" }),
   currency: z.string().min(1, { message: "Currency is required" }),
   paymentMethod: z.string().min(1, { message: "Payment method is required" }),
@@ -128,7 +129,7 @@ const CryptoPage = () => {
     };
 
     try {
-      await axios.post("/api/deposit", modifiedData);
+      localStorage.setItem("depositData", JSON.stringify(modifiedData));
       toast.loading("Deposit request sent. Processing...");
       if (modifiedData.paymentMethod === "bitcoin") {
         router.push("/dashboard/deposits/confirmation");
