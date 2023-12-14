@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const ConfirmationPage = () => {
   const [copied, setCopied] = useState(false);
@@ -12,9 +13,10 @@ const ConfirmationPage = () => {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
+      toast.success("Address copied successfully");
       setCopied(true);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      toast.error("Failed to copy address");
     }
   };
   return (
