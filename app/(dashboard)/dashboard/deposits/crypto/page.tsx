@@ -129,7 +129,7 @@ const CryptoPage = () => {
 
     try {
       await axios.post("/api/deposit", modifiedData);
-      toast.success("Deposit made successfully ");
+      toast.success("Depost request sent successfully");
       if (modifiedData.paymentMethod === "bitcoin") {
         router.push("/dashboard/deposits/confirmation");
       } else if (
