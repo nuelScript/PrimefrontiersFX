@@ -25,7 +25,8 @@ const ConfirmationPage = () => {
     try {
       const modifiedData = localStorage.getItem("depositData");
       const modifiedDataObject = JSON.parse(modifiedData || "");
-      await axios.post("/api/deposits", modifiedDataObject);
+      9;
+      await axios.post("/api/deposit", modifiedDataObject);
       toast.success("Deposit Request Sent!");
       router.push("/dashboard/deposits/list");
     } catch (error: any) {
