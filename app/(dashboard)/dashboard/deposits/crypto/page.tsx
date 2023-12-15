@@ -129,7 +129,7 @@ const CryptoPage = () => {
 
     try {
       localStorage.setItem("depositData", JSON.stringify(modifiedData));
-      toast.loading("Deposit request sent. Processing...");
+      toast.loading("Processing...");
       if (modifiedData.paymentMethod === "bitcoin") {
         router.push("/dashboard/deposits/confirmation");
       } else if (
