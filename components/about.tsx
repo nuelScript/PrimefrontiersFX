@@ -7,7 +7,7 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-4 w-fit">
-      <h3 className="text-2xl font-semibold capitalize">Affordable Packages</h3>
+      <h3 className="text-2xl font-semibold capitalize">About Us</h3>
       <p className="font-normal text-base text-center w-3/4">
         Most Flexible Crypto Mining Platform
       </p>
