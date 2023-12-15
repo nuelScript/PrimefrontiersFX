@@ -21,7 +21,7 @@ const routes = [
   },
   {
     label: "Sign In",
-    href: "/sign-in",
+    href: "/dashboard",
   },
   {
     label: "Sign Up",
@@ -60,7 +60,7 @@ const Navbar = () => {
                   <Home className="w-5 h-5" /> <span>Home</span>
                 </Link>
                 <Link
-                  href="/sign-in"
+                  href="/dashboard"
                   className="flex space-x-4 flex-1 items-center hover:bg-neutral-100/50 bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-800/50 rounded-xl p-4"
                 >
                   <Contact className="w-5 h-5" />

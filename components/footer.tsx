@@ -18,7 +18,7 @@ const Footer = () => {
         <span>Quick Links</span>
         <div className="flex flex-col space-y-4 lg:items-start items-center text-base font-normal">
           <Link href="/contact">Contact Us</Link>
-          <Link href="/sign-in">My Account</Link>
+          <Link href="/dashboard">My Account</Link>
           <Link href="/sign-up">Create Account</Link>
         </div>
       </div>
