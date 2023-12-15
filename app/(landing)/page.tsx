@@ -1,3 +1,4 @@
+import AboutPage from "@/components/about";
 import CustomerSupport from "@/components/customer-support";
 import Experience from "@/components/experience";
 import FAQ from "@/components/faq";
@@ -5,6 +6,7 @@ import Feature from "@/components/feature";
 import Footer from "@/components/footer";
 import LandingBanner from "@/components/landing-banner";
 import Offer from "@/components/offer";
+import PlansPage from "@/components/plans";
 import TradingWidget from "@/components/trading-widget";
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
       <CustomerSupport />
       <FAQ />
       <Feature />
+      <PlansPage />
+      <AboutPage />
       <Experience />
       <Footer />
     </div>
