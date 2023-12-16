@@ -7,7 +7,6 @@ import { NextResponse } from "next/server";
 
 export async function sendDepositNotification() {
   const { userId } = auth();
-  const user = await currentUser();
 
   if (!userId) {
     return NextResponse.redirect("/sign-in");
