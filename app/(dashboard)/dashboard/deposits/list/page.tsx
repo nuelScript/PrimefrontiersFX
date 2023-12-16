@@ -55,7 +55,7 @@ const DepositList = async () => {
               </p>
               <p className="font-medium text-sm">{deposit.bitcoinEquivalent}</p>
               <p className="font-medium text-sm capitalize">
-                {deposit.wallet} (Pending)
+                {deposit.wallet} ({deposit.status})
               </p>
             </div>
             <Link href="/" className="hover:text-neutral-500">
