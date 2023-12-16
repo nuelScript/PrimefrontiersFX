@@ -2,7 +2,7 @@
 
 import nodemailer from "nodemailer";
 import prismadb from "./prismadb";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 export async function sendDepositNotification() {
