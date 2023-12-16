@@ -16,6 +16,7 @@ export async function fetchMiningBalance() {
       wallet: {
         contains: "mining",
       },
+      status: "confirmed",
     },
     select: {
       amount: true,
@@ -60,6 +61,7 @@ export async function fetchTradingBalance() {
       wallet: {
         contains: "trading",
       },
+      status: "confirmed",
     },
     select: {
       amount: true,

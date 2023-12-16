@@ -1,6 +1,7 @@
 import { auth, currentUser } from "@clerk/nextjs";
 import prismadb from "@/lib/prismadb";
 import { NextResponse } from "next/server";
+import { sendDepositNotification } from "@/lib/depositNotification";
 
 export async function POST(req: Request) {
   try {
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
         firstName,
         lastName,
         amount,
+        status: "pending",
         bitcoinEquivalent,
         paymentMethod,
         wallet,
@@ -40,6 +42,9 @@ export async function POST(req: Request) {
     if (!transaction) {
       return new NextResponse("Transaction creation failed", { status: 400 });
     }
+
+    await sendDepositNotification();
+
     return new NextResponse("Transaction created successfully", {
       status: 200,
     });
