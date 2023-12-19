@@ -11,7 +11,9 @@ const Footer = () => {
         <h3 className="text-xl font-semibold">PrimeFrontiers FX</h3>
         <div className="inline-flex items-center">
           <Mail className="w-4 h-4 mr-2" />{" "}
-          <span>info@primefrontiersFX.com</span>
+          <Link href="mailto:info@primefrontiersfx.com">
+            info@primefrontiersfx.com
+          </Link>
         </div>
       </div>
       <div className="text-xl font-semibold lg:text-start text-center space-y-4">

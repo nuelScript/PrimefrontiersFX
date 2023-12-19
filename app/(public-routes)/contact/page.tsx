@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -135,7 +136,9 @@ const ContactPage = () => {
             </p>
             <div className="inline-flex space-x-2">
               <Mail />
-              <span>info@contact.com</span>
+              <Link href="mailto:info@primefrontiers.com">
+                info@primefrontiersfx.com
+              </Link>
             </div>
           </div>
         </div>
