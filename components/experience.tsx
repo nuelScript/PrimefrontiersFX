@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const Experience = () => {
+export const Experience = () => {
   return (
     <div className="flex lg:flex-row flex-col lg:justify-center lg:items-start items-center lg:space-x-8 lg:space-y-0 space-y-8 space-x-0 p-2">
       <motion.div
@@ -34,5 +34,3 @@ const Experience = () => {
     </div>
   );
 };
-
-export default Experience;

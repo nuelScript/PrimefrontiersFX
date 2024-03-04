@@ -1,4 +1,4 @@
-import Banner from "@/components/banner";
+import { Banner } from "@/components/banner";
 import Base from "@/components/base";
 import { Card, CardContent } from "@/components/ui/card";
 

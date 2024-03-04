@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const Feature = () => {
+export const Feature = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-2 w-fit">
       <div className="flex lg:flex-row flex-col lg:space-x-4 lg:space-y-0 space-x-0 space-y-4">
@@ -67,5 +67,3 @@ const Feature = () => {
     </div>
   );
 };
-
-export default Feature;

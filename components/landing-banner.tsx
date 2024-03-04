@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const LandingBanner = () => {
+export const LandingBanner = () => {
   return (
     <div className="flex lg:flex-row flex-col lg:justify-center lg:items-start items-center lg:space-x-8 lg:space-y-0 space-y-8 space-x-0 p-2">
       <div className="flex flex-col justify-center lg:items-start items-center space-y-6">
@@ -34,5 +34,3 @@ const LandingBanner = () => {
     </div>
   );
 };
-
-export default LandingBanner;

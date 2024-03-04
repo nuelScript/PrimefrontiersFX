@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const CustomerSupport = () => {
+export const CustomerSupport = () => {
   return (
     <div className="flex lg:flex-row flex-col lg:justify-center items-center lg:space-x-8 lg:space-y-0 space-x-0 space-y-8 px-2 py-6 bg-neutral-200 dark:bg-neutral-900 rounded-xl">
       <motion.div
@@ -36,5 +36,3 @@ const CustomerSupport = () => {
     </div>
   );
 };
-
-export default CustomerSupport;

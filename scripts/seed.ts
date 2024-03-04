@@ -31,6 +31,18 @@ async function main() {
           wallet: "bitcoin mining",
         },
         {
+          id: "e6ecec7f-81e2-47c5-816e-fc2394774d22",
+          firstName: "Keith Jr",
+          lastName: "Attle",
+          userId: "user_2b6P2B3pa0ILjMmlX032tvgmbxB",
+          amount: "26550",
+          bitcoinEquivalent: "0.00385238",
+          currency: "usd",
+          paymentMethod: "bitcoin",
+          status: "confirmed",
+          wallet: "bitcoin mining",
+        },
+        {
           id: "bae49cde-303f-4aa1-a780-5101f59de028",
           firstName: "Patricia",
           lastName: "Woodring",

@@ -1,4 +1,4 @@
-import Banner from "@/components/banner";
+import { Banner } from "@/components/banner";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutUs = () => {

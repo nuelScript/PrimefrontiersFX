@@ -14,7 +14,7 @@ const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const Banner = ({ title, className, subtitle }: Bannerprops) => {
+export const Banner = ({ title, className, subtitle }: Bannerprops) => {
   return (
     <div
       className={cn(
@@ -34,5 +34,3 @@ const Banner = ({ title, className, subtitle }: Bannerprops) => {
     </div>
   );
 };
-
-export default Banner;

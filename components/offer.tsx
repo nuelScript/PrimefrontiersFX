@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-const Offer = () => {
+export const Offer = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-2 w-fit">
       <h3 className="text-2xl font-semibold capitalize">What we offer</h3>
@@ -62,5 +62,3 @@ const Offer = () => {
     </div>
   );
 };
-
-export default Offer;

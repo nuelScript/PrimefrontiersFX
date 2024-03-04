@@ -1,4 +1,4 @@
-const TradingWidget = () => {
+export const TradingWidget = () => {
   return (
     <div className="tradingview-widget-container">
       <div className="tradingview-widget-container__widget"></div>
@@ -11,5 +11,3 @@ const TradingWidget = () => {
     </div>
   );
 };
-
-export default TradingWidget;

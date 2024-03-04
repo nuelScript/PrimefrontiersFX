@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 
-const AboutPage = () => {
+export const AboutPage = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-4 w-fit">
       <h3 className="text-2xl font-semibold capitalize">About Us</h3>
@@ -27,5 +27,3 @@ const AboutPage = () => {
     </div>
   );
 };
-
-export default AboutPage;

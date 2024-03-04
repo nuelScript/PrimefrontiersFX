@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const PlansPage = () => {
+export const PlansPage = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-4 w-fit">
       <h3 className="text-2xl font-semibold capitalize">Affordable Packages</h3>
@@ -148,5 +148,3 @@ const PlansPage = () => {
     </div>
   );
 };
-
-export default PlansPage;

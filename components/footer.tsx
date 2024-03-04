@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="flex max-w-screen-xl w-full lg:flex-row flex-col lg:items-start items-center justify-between lg:space-y-0 space-y-8 p-2">
       <div className="flex flex-col space-y-4 lg:items-start items-center">
@@ -27,5 +27,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FAQ = () => {
+export const FAQ = () => {
   return (
     <div className="flex flex-col items-center space-y-8 p-2">
       <h3 className="text-center text-4xl font-bold">FAQS</h3>
@@ -355,5 +355,3 @@ const FAQ = () => {
     </div>
   );
 };
-
-export default FAQ;
