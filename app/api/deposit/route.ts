@@ -45,9 +45,9 @@ export async function POST(req: Request) {
 
     await sendDepositNotification();
 
-    if (!sendDepositNotification()) {
-      return new NextResponse("Transaction creation failed", { status: 400 }); // Remove if code breaks
-    }
+    // if (!sendDepositNotification()) {
+    //   return new NextResponse("Transaction creation failed", { status: 400 }); // Remove if code breaks
+    // }
 
     return new NextResponse("Transaction created successfully", {
       status: 200,
